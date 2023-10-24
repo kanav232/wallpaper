@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+        <title>Capybara</title>
+    </head>
+    <body>
+        
+        <div id="start">
+            <div class="navbar">
+                <div class="user">
+                    <button type="button">Search</button>
+                    <img src="images/image (2).jpg" alt="User Image">
+                </div>
+            </div>
+            <div class="container">
+                <div class="info">
+                    <h1>Discover</h1>
+                    <p>Let's see the beauty of the mythical animal which the legend says is<br> blessed to be the cutest by heaven called "Capibara" Together</p>
+                    <input type="text" placeholder="Search">
+                        
+                    
+                </div>
+            </div>
+            <div class="slider">
+                <img src="images/left-arrow.png" alt="Left Arrow" id="prev">
+                <div class="preview">
+                    <img src="images/image (1).jpg" class="active">
+                    <img src="images/image (2).jpg" class="thumbnail">
+                    <img src="images/image (3).jpg" class="thumbnail">
+                    <img src="images/image (4).jpg" class="thumbnail">
+                    <img src="images/image (5).jpg" class="thumbnail">
+                </div>
+                <img src="images/right-arrow.png" alt="Right Arrow" id="next">
+            </div>
+
+        </div>
+    <script>
+        var prev=document.getElementById("prev")
+        var next=document.getElementById("next")
+        var thumbnail=document.getElementsByClassName("thumbnail")
+        var start=document.getElementById("start")
+        var backgroundimg=new Array(
+            "images/image (1).jpg",
+            "images/image (2).jpg",
+            "images/image (3).jpg",
+            "images/image (4).jpg",
+            "images/image (5).jpg"
+        )
+        let i=0;
+
+        next.onclick=function(){
+
+            if(i==4){i=1;}
+            let temp=i+1
+            if(temp>4){
+                start.style.backgroundImage='url("'+backgroundimg[0]+'")';
+                thumbnail[0].classList.add("active");
+            }
+            else{
+                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
+                thumbnail[temp].classList.add("active");
+
+            }
+            thumbnail[i].classList.remove("active");
+
+            i++;
+            
+        }
+        prev.onclick=function(){
+
+            if(i==0){i=4;}
+            let temp=i-1
+            if(temp<0){
+                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
+                thumbnail[temp].classList.add("active");
+            }
+            else{
+                start.style.backgroundImage='url("'+backgroundimg[i-1]+'")';
+              thumbnail[i-1].classList.add("active");
+            }
+            thumbnail[i].classList.remove("active");
+            i--;
+            
+        }
+    </script>
+
+    </body>
+</html>
