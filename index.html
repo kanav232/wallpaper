@@ -26,7 +26,7 @@
             <div class="slider">
                 <img src="images/left-arrow.png" alt="Left Arrow" id="prev">
                 <div class="preview">
-                    <img src="images/image (1).jpg" class="active">
+                    <img src="images/image (1).jpg" class="thumbnail">
                     <img src="images/image (2).jpg" class="thumbnail">
                     <img src="images/image (3).jpg" class="thumbnail">
                     <img src="images/image (4).jpg" class="thumbnail">
@@ -49,12 +49,14 @@
             "images/image (5).jpg"
         )
         let i=0;
+        thumbnail[0].classList.add("active")
+
 
         next.onclick=function(){
 
-            if(i==4){i=1;}
+            if(i==5){i=0;}
             let temp=i+1
-            if(temp>4){
+            if(temp==5){
                 start.style.backgroundImage='url("'+backgroundimg[0]+'")';
                 thumbnail[0].classList.add("active");
             }
@@ -70,15 +72,17 @@
         }
         prev.onclick=function(){
 
-            if(i==0){i=4;}
+            if(i==-1){i=4;}
+            if(i==5){i=0;}
             let temp=i-1
-            if(temp<0){
-                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
-                thumbnail[temp].classList.add("active");
+            if(temp==-1){
+                start.style.backgroundImage='url("'+backgroundimg[4]+'")';
+                thumbnail[4].classList.add("active");
+
             }
             else{
-                start.style.backgroundImage='url("'+backgroundimg[i-1]+'")';
-              thumbnail[i-1].classList.add("active");
+                start.style.backgroundImage='url("'+backgroundimg[temp]+'")';
+              thumbnail[temp].classList.add("active");
             }
             thumbnail[i].classList.remove("active");
             i--;
