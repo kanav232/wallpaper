@@ -77,12 +77,18 @@ button{
     display:flex;
     align-items: center;
     position: absolute;
-    right: 30px;
+    width: 50%;
+    height:20%;
+    right: 300px;
     bottom: 60px;
 }
 #next,#prev{
     width: 20px;
     cursor: pointer;
+    
+}
+#img1,#img2,#img3,#img4,#img5{
+    cursor:pointer
 }
 .preview{
     display: flex;
