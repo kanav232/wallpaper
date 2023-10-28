@@ -10,7 +10,6 @@
         <div id="start">
             <div class="navbar">
                 <div class="user">
-                    <button type="button">Search</button>
                     <img src="images/image (2).jpg" alt="User Image">
                 </div>
             </div>
@@ -18,7 +17,6 @@
                 <div class="info">
                     <h1>Discover</h1>
                     <p>Let's see the beauty of the mythical animal which the legend says is<br> blessed to be the cutest by heaven called "Capibara" Together</p>
-                    <input type="text" placeholder="Search">
                         
                     
                 </div>
@@ -26,11 +24,11 @@
             <div class="slider">
                 <img src="images/left-arrow.png" alt="Left Arrow" id="prev">
                 <div class="preview">
-                    <img src="images/image (1).jpg" class="thumbnail">
-                    <img src="images/image (2).jpg" class="thumbnail">
-                    <img src="images/image (3).jpg" class="thumbnail">
-                    <img src="images/image (4).jpg" class="thumbnail">
-                    <img src="images/image (5).jpg" class="thumbnail">
+                    <img src="images/image (1).jpg" class="thumbnail" id="img1">
+                    <img src="images/image (2).jpg" class="thumbnail" id="img2">
+                    <img src="images/image (3).jpg" class="thumbnail" id="img3">
+                    <img src="images/image (4).jpg" class="thumbnail" id="img4">
+                    <img src="images/image (5).jpg" class="thumbnail" id="img5">
                 </div>
                 <img src="images/right-arrow.png" alt="Right Arrow" id="next">
             </div>
@@ -50,7 +48,42 @@
         )
         let i=0;
         thumbnail[0].classList.add("active")
+        img1.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=0;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
 
+        }
+        img2.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=1;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+
+            thumbnail[i].classList.add("active")
+
+        }
+        img3.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=2;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+        img4.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=3;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
+        img5.onclick=function(){
+            thumbnail[i].classList.remove("active")
+            i=4;
+            start.style.backgroundImage='url("'+backgroundimg[i]+'")';
+            thumbnail[i].classList.add("active")
+
+        }
 
         next.onclick=function(){
 
